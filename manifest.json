@@ -1,41 +1,50 @@
 {
-  "name": "SpeedTrax — India's Vehicle Companion",
+  "name": "SpeedTrax \u2014 India's Vehicle Companion",
   "short_name": "SpeedTrax",
   "description": "Track speed, trips, fuel & expenses for Indian vehicles",
-  "id": "/",
-  "start_url": "/",
-  "scope": "/",
+  "id": "/speedtrax/",
+  "start_url": "/speedtrax/",
+  "scope": "/speedtrax/",
   "display": "standalone",
-  "display_override": ["tabbed", "window-controls-overlay", "standalone", "minimal-ui"],
+  "display_override": [
+    "tabbed",
+    "window-controls-overlay",
+    "standalone",
+    "minimal-ui"
+  ],
   "orientation": "portrait",
   "background_color": "#04040e",
   "theme_color": "#04040e",
   "lang": "en-IN",
   "dir": "ltr",
-  "categories": ["navigation", "utilities", "travel"],
+  "categories": [
+    "navigation",
+    "utilities",
+    "travel"
+  ],
   "prefer_related_applications": false,
   "iarc_rating_id": "e84b072d-71b3-4d3e-86ae-31a8ce4e53b2",
   "icons": [
     {
-      "src": "/icons/icon-192.png",
+      "src": "icons/icon-192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/icons/icon-192.png",
+      "src": "icons/icon-192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "maskable"
     },
     {
-      "src": "/icons/icon-512.png",
+      "src": "icons/icon-512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/icons/icon-512.png",
+      "src": "icons/icon-512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"
@@ -43,14 +52,14 @@
   ],
   "screenshots": [
     {
-      "src": "/screenshots/narrow.png",
+      "src": "screenshots/narrow.png",
       "sizes": "390x844",
       "type": "image/png",
       "form_factor": "narrow",
       "label": "SpeedTrax Speed Tracker"
     },
     {
-      "src": "/screenshots/wide.png",
+      "src": "screenshots/wide.png",
       "sizes": "1024x600",
       "type": "image/png",
       "form_factor": "wide",
@@ -63,36 +72,68 @@
       "short_name": "Speed",
       "description": "Open the speed tracking screen",
       "url": "/?screen=speed",
-      "icons": [{ "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png" }]
+      "icons": [
+        {
+          "src": "icons/icon-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
     },
     {
       "name": "Trip Log",
       "short_name": "Trips",
       "description": "View your trip history",
       "url": "/?screen=trips",
-      "icons": [{ "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png" }]
+      "icons": [
+        {
+          "src": "icons/icon-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
     }
   ],
   "share_target": {
     "action": "/share",
     "method": "GET",
-    "params": { "title": "title", "text": "text", "url": "url" }
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url"
+    }
   },
-  "launch_handler": { "client_mode": "focus-existing" },
+  "launch_handler": {
+    "client_mode": "focus-existing"
+  },
   "handle_links": "preferred",
   "scope_extensions": [
-    { "origin": "https://shreyasma261-sketch.github.io" }
+    {
+      "origin": "https://shreyasma261-sketch.github.io"
+    }
   ],
   "protocol_handlers": [
-    { "protocol": "web+speedtrax", "url": "/?protocol=%s" }
+    {
+      "protocol": "web+speedtrax",
+      "url": "/?protocol=%s"
+    }
   ],
   "file_handlers": [
     {
       "action": "/",
-      "accept": { "application/json": [".json"], "text/plain": [".txt"] }
+      "accept": {
+        "application/json": [
+          ".json"
+        ],
+        "text/plain": [
+          ".txt"
+        ]
+      }
     }
   ],
-  "edge_side_panel": { "preferred_width": 400 },
+  "edge_side_panel": {
+    "preferred_width": 400
+  },
   "widgets": [
     {
       "name": "SpeedTrax Widget",
@@ -101,11 +142,24 @@
       "ms_ac_template": "/widget-template.json",
       "data": "/widget-data.json",
       "type": "application/json",
-      "screenshots": [{ "src": "/screenshots/narrow.png", "sizes": "390x844", "label": "SpeedTrax Widget" }],
-      "icons": [{ "src": "/icons/icon-192.png", "sizes": "192x192" }]
+      "screenshots": [
+        {
+          "src": "/screenshots/narrow.png",
+          "sizes": "390x844",
+          "label": "SpeedTrax Widget"
+        }
+      ],
+      "icons": [
+        {
+          "src": "/icons/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
     }
   ],
-  "note_taking": { "new_note_url": "/" },
+  "note_taking": {
+    "new_note_url": "/"
+  },
   "related_applications": [
     {
       "platform": "play",
