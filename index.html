@@ -1,4 +1,4 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -8,51 +8,13 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="SpeedTrax">
-<link rel="manifest" href="data:application/manifest+json,%7B%22name%22%3A%22SpeedTrax%20%E2%80%94%20India%27s%20Vehicle%20Companion%22%2C%22short_name%22%3A%22SpeedTrax%22%2C%22description%22%3A%22Track%20speed%2C%20trips%2C%20fuel%20%26%20expenses%20for%20Indian%20vehicles%22%2C%22id%22%3A%22%2F%22%2C%22start_url%22%3A%22%2F%22%2C%22scope%22%3A%22%2F%22%2C%22display%22%3A%22standalone%22%2C%22display_override%22%3A%5B%22window-controls-overlay%22%2C%22standalone%22%2C%22minimal-ui%22%5D%2C%22orientation%22%3A%22portrait%22%2C%22background_color%22%3A%22%2304040e%22%2C%22theme_color%22%3A%22%2304040e%22%2C%22lang%22%3A%22en-IN%22%2C%22dir%22%3A%22ltr%22%2C%22categories%22%3A%5B%22navigation%22%2C%22utilities%22%2C%22travel%22%5D%2C%22prefer_related_applications%22%3Afalse%2C%22icons%22%3A%5B%7B%22src%22%3A%22icons%2Ficon-192.png%22%2C%22sizes%22%3A%22192x192%22%2C%22type%22%3A%22image%2Fpng%22%2C%22purpose%22%3A%22any%22%7D%2C%7B%22src%22%3A%22icons%2Ficon-192.png%22%2C%22sizes%22%3A%22192x192%22%2C%22type%22%3A%22image%2Fpng%22%2C%22purpose%22%3A%22maskable%22%7D%2C%7B%22src%22%3A%22icons%2Ficon-512.png%22%2C%22sizes%22%3A%22512x512%22%2C%22type%22%3A%22image%2Fpng%22%2C%22purpose%22%3A%22any%22%7D%2C%7B%22src%22%3A%22icons%2Ficon-512.png%22%2C%22sizes%22%3A%22512x512%22%2C%22type%22%3A%22image%2Fpng%22%2C%22purpose%22%3A%22maskable%22%7D%5D%2C%22screenshots%22%3A%5B%7B%22src%22%3A%22screenshots%2Fnarrow.png%22%2C%22sizes%22%3A%22640x1136%22%2C%22type%22%3A%22image%2Fpng%22%2C%22form_factor%22%3A%22narrow%22%2C%22label%22%3A%22SpeedTrax%20Speed%20Tracker%22%7D%2C%7B%22src%22%3A%22screenshots%2Fwide.png%22%2C%22sizes%22%3A%221024x600%22%2C%22type%22%3A%22image%2Fpng%22%2C%22form_factor%22%3A%22wide%22%2C%22label%22%3A%22SpeedTrax%20Dashboard%22%7D%5D%2C%22shortcuts%22%3A%5B%7B%22name%22%3A%22Speed%20Tracker%22%2C%22short_name%22%3A%22Speed%22%2C%22description%22%3A%22Open%20the%20speed%20tracking%20screen%22%2C%22url%22%3A%22%2F%3Fscreen%3Dspeed%22%7D%2C%7B%22name%22%3A%22Trip%20Log%22%2C%22short_name%22%3A%22Trips%22%2C%22description%22%3A%22View%20your%20trip%20history%22%2C%22url%22%3A%22%2F%3Fscreen%3Dtrips%22%7D%5D%2C%22share_target%22%3A%7B%22action%22%3A%22%2Fshare%22%2C%22method%22%3A%22GET%22%2C%22params%22%3A%7B%22title%22%3A%22title%22%2C%22text%22%3A%22text%22%2C%22url%22%3A%22url%22%7D%7D%2C%22scope_extensions%22%3A%5B%7B%22origin%22%3A%22https%3A%2F%2Ftraxappspeed.netlify.app%22%7D%5D%2C%22launch_handler%22%3A%7B%22client_mode%22%3A%22focus-existing%22%7D%2C%22iarc_rating_id%22%3A%22e84b072d-71b3-4d3e-86ae-31a8ce4e53b2%22%2C%22related_applications%22%3A%5B%7B%22platform%22%3A%22webapp%22%2C%22url%22%3A%22https%3A%2F%2Fshreyasma261-sketch.github.io%2Fspeedtrax%2F%22%7D%5D%7D">
+<link rel="manifest" href="/manifest.json">
 <script>
-// ─── Service Worker (inline blob — registered on http/https only) ────────────
-if ('serviceWorker' in navigator && (location.protocol === 'https:' || location.protocol === 'http:')) {
-  const swCode = `
-const CACHE = 'speedtrax-v2';
-const PRECACHE = ['/', '/index.html', '/icons/icon-192.png', '/icons/icon-512.png'];
-self.addEventListener('install', e => {
-  self.skipWaiting();
-  e.waitUntil(caches.open(CACHE).then(c => c.addAll(PRECACHE).catch(()=>{})));
-});
-self.addEventListener('activate', e => {
-  e.waitUntil(
-    caches.keys().then(keys =>
-      Promise.all(keys.filter(k => k !== CACHE).map(k => caches.delete(k)))
-    ).then(() => self.clients.claim())
-  );
-});
-self.addEventListener('fetch', e => {
-  if (e.request.method !== 'GET' || !e.request.url.startsWith('http')) return;
-  e.respondWith(
-    caches.match(e.request).then(cached => {
-      if (cached) return cached;
-      return fetch(e.request).then(resp => {
-        if (resp && resp.status === 200 && resp.type === 'basic') {
-          const clone = resp.clone();
-          caches.open(CACHE).then(c => c.put(e.request, clone));
-        }
-        return resp;
-      }).catch(() => caches.match('/index.html'));
-    })
-  );
-});
-self.addEventListener('push', e => {
-  const d = e.data ? e.data.json() : {};
-  e.waitUntil(self.registration.showNotification(d.title || 'SpeedTrax', {
-    body: d.body || '', icon: '/icons/icon-192.png'
-  }));
-});
-  `;
-  try {
-    const swBlob = new Blob([swCode], { type: 'application/javascript' });
-    const swUrl = URL.createObjectURL(swBlob);
-    navigator.serviceWorker.register(swUrl).catch(() => {});
-  } catch(e) {}
+// ─── Service Worker Registration ─────────────────────────────────────────────
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js').catch(() => {});
+  });
 }
 </script>
 <link rel="apple-touch-icon" sizes="192x192" href="data:image/png;base64,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">
@@ -212,11 +174,11 @@ input,select,button,textarea{font-family:var(--exo);}
 
 /* ── SCREENS ── */
 .screens{flex:1;overflow:hidden;position:relative;z-index:2;}
-.screen{position:absolute;inset:0;overflow-y:auto;padding-bottom:calc(86px + env(safe-area-inset-bottom, 0px));display:none;}
+.screen{position:absolute;inset:0;overflow-y:auto;padding-bottom:86px;display:none;}
 .screen.active{display:block;animation:fadeIn .25s ease;}
 
 /* ── BOTTOM NAV ── */
-.bnav{display:flex;background:rgba(7,7,26,.98);backdrop-filter:blur(16px);border-top:1px solid var(--bdr);padding:6px 0 calc(9px + env(safe-area-inset-bottom, 0px));flex-shrink:0;position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:430px;z-index:10;}
+.bnav{display:flex;background:rgba(7,7,26,.98);backdrop-filter:blur(16px);border-top:1px solid var(--bdr);padding:6px 0 9px;flex-shrink:0;position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:430px;z-index:10;}
 .nb{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;cursor:pointer;padding:4px 1px;border:none;background:none;color:var(--text3);transition:all .22s;position:relative;}
 .nb.active{color:var(--cyan);}
 .nb.active svg{filter:drop-shadow(0 0 5px rgba(0,240,255,.7));}
