@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -8,101 +8,16 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="SpeedTrax">
-<link rel="manifest" id="pwa-manifest">
+<link rel="manifest" href="data:application/manifest+json,%7B%22name%22%3A%22SpeedTrax%20%E2%80%94%20India%27s%20Vehicle%20Companion%22%2C%22short_name%22%3A%22SpeedTrax%22%2C%22description%22%3A%22Track%20speed%2C%20trips%2C%20fuel%20%26%20expenses%20for%20Indian%20vehicles%22%2C%22id%22%3A%22%2F%22%2C%22start_url%22%3A%22%2F%22%2C%22scope%22%3A%22%2F%22%2C%22display%22%3A%22standalone%22%2C%22display_override%22%3A%5B%22window-controls-overlay%22%2C%22standalone%22%2C%22minimal-ui%22%5D%2C%22orientation%22%3A%22portrait%22%2C%22background_color%22%3A%22%2304040e%22%2C%22theme_color%22%3A%22%2304040e%22%2C%22lang%22%3A%22en-IN%22%2C%22dir%22%3A%22ltr%22%2C%22categories%22%3A%5B%22navigation%22%2C%22utilities%22%2C%22travel%22%5D%2C%22prefer_related_applications%22%3Afalse%2C%22icons%22%3A%5B%7B%22src%22%3A%22icons%2Ficon-192.png%22%2C%22sizes%22%3A%22192x192%22%2C%22type%22%3A%22image%2Fpng%22%2C%22purpose%22%3A%22any%22%7D%2C%7B%22src%22%3A%22icons%2Ficon-192.png%22%2C%22sizes%22%3A%22192x192%22%2C%22type%22%3A%22image%2Fpng%22%2C%22purpose%22%3A%22maskable%22%7D%2C%7B%22src%22%3A%22icons%2Ficon-512.png%22%2C%22sizes%22%3A%22512x512%22%2C%22type%22%3A%22image%2Fpng%22%2C%22purpose%22%3A%22any%22%7D%2C%7B%22src%22%3A%22icons%2Ficon-512.png%22%2C%22sizes%22%3A%22512x512%22%2C%22type%22%3A%22image%2Fpng%22%2C%22purpose%22%3A%22maskable%22%7D%5D%2C%22screenshots%22%3A%5B%7B%22src%22%3A%22screenshots%2Fnarrow.png%22%2C%22sizes%22%3A%22640x1136%22%2C%22type%22%3A%22image%2Fpng%22%2C%22form_factor%22%3A%22narrow%22%2C%22label%22%3A%22SpeedTrax%20Speed%20Tracker%22%7D%2C%7B%22src%22%3A%22screenshots%2Fwide.png%22%2C%22sizes%22%3A%221024x600%22%2C%22type%22%3A%22image%2Fpng%22%2C%22form_factor%22%3A%22wide%22%2C%22label%22%3A%22SpeedTrax%20Dashboard%22%7D%5D%2C%22shortcuts%22%3A%5B%7B%22name%22%3A%22Speed%20Tracker%22%2C%22short_name%22%3A%22Speed%22%2C%22description%22%3A%22Open%20the%20speed%20tracking%20screen%22%2C%22url%22%3A%22%2F%3Fscreen%3Dspeed%22%7D%2C%7B%22name%22%3A%22Trip%20Log%22%2C%22short_name%22%3A%22Trips%22%2C%22description%22%3A%22View%20your%20trip%20history%22%2C%22url%22%3A%22%2F%3Fscreen%3Dtrips%22%7D%5D%2C%22share_target%22%3A%7B%22action%22%3A%22%2Fshare%22%2C%22method%22%3A%22GET%22%2C%22params%22%3A%7B%22title%22%3A%22title%22%2C%22text%22%3A%22text%22%2C%22url%22%3A%22url%22%7D%7D%2C%22scope_extensions%22%3A%5B%7B%22origin%22%3A%22https%3A%2F%2Ftraxappspeed.netlify.app%22%7D%5D%2C%22launch_handler%22%3A%7B%22client_mode%22%3A%22focus-existing%22%7D%2C%22iarc_rating_id%22%3A%22e84b072d-71b3-4d3e-86ae-31a8ce4e53b2%22%2C%22related_applications%22%3A%5B%7B%22platform%22%3A%22webapp%22%2C%22url%22%3A%22https%3A%2F%2Fshreyasma261-sketch.github.io%2Fspeedtrax%2F%22%7D%5D%7D">
 <script>
-// ─── Inline PWA Manifest (fixes PWABuilder score) ───────────────────────────
-(function(){
-  const manifest = {
-    "name": "SpeedTrax — India's Vehicle Companion",
-    "short_name": "SpeedTrax",
-    "description": "Track speed, trips, fuel & expenses for Indian vehicles",
-    "id": "/",
-    "start_url": "/",
-    "scope": "/",
-    "display": "standalone",
-    "display_override": ["window-controls-overlay", "standalone", "minimal-ui"],
-    "orientation": "portrait",
-    "background_color": "#04040e",
-    "theme_color": "#04040e",
-    "lang": "en-IN",
-    "dir": "ltr",
-    "categories": ["navigation", "utilities", "travel"],
-    "prefer_related_applications": false,
-    "icons": [
-      {
-        "src": "https://traxappspeed.netlify.app/icons/icon-192.png",
-        "sizes": "192x192",
-        "type": "image/png",
-        "purpose": "any"
-      },
-      {
-        "src": "https://traxappspeed.netlify.app/icons/icon-192.png",
-        "sizes": "192x192",
-        "type": "image/png",
-        "purpose": "maskable"
-      },
-      {
-        "src": "https://traxappspeed.netlify.app/icons/icon-512.png",
-        "sizes": "512x512",
-        "type": "image/png",
-        "purpose": "any"
-      },
-      {
-        "src": "https://traxappspeed.netlify.app/icons/icon-512.png",
-        "sizes": "512x512",
-        "type": "image/png",
-        "purpose": "maskable"
-      }
-    ],
-    "screenshots": [
-      {
-        "src": "https://traxappspeed.netlify.app/screenshots/narrow.png",
-        "sizes": "640x1136",
-        "type": "image/png",
-        "form_factor": "narrow",
-        "label": "SpeedTrax Speed Tracker"
-      },
-      {
-        "src": "https://traxappspeed.netlify.app/screenshots/wide.png",
-        "sizes": "1024x600",
-        "type": "image/png",
-        "form_factor": "wide",
-        "label": "SpeedTrax Dashboard"
-      }
-    ],
-    "shortcuts": [
-      {
-        "name": "Speed Tracker",
-        "short_name": "Speed",
-        "description": "Open the speed tracking screen",
-        "url": "/?screen=speed"
-      },
-      {
-        "name": "Trip Log",
-        "short_name": "Trips",
-        "description": "View your trip history",
-        "url": "/?screen=trips"
-      }
-    ],
-    "launch_handler": { "client_mode": "focus-existing" },
-    "iarc_rating_id": "e84b072d-71b3-4d3e-86ae-31a8ce4e53b2",
-    "related_applications": [{"platform": "webapp", "url": "https://traxappspeed.netlify.app"}]
-  };
-
-  // Inject manifest as a blob URL
-  const blob = new Blob([JSON.stringify(manifest)], {type: 'application/manifest+json'});
-  const url = URL.createObjectURL(blob);
-  document.getElementById('pwa-manifest').setAttribute('href', url);
-
-  // Register inline service worker via data URL (works for file:// and http:// origins)
-  if ('serviceWorker' in navigator) {
-    // Only attempt SW registration on http/https — blob: and sandboxed iframes will silently skip
-    const origin = location.protocol;
-    if(origin === 'http:' || origin === 'https:') {
-      const swCode = `
-const CACHE = 'speedtrax-v1';
+// ─── Service Worker (inline blob — registered on http/https only) ────────────
+if ('serviceWorker' in navigator && (location.protocol === 'https:' || location.protocol === 'http:')) {
+  const swCode = `
+const CACHE = 'speedtrax-v2';
+const PRECACHE = ['/', '/index.html', '/icons/icon-192.png', '/icons/icon-512.png'];
 self.addEventListener('install', e => {
   self.skipWaiting();
+  e.waitUntil(caches.open(CACHE).then(c => c.addAll(PRECACHE).catch(()=>{})));
 });
 self.addEventListener('activate', e => {
   e.waitUntil(
@@ -122,27 +37,23 @@ self.addEventListener('fetch', e => {
           caches.open(CACHE).then(c => c.put(e.request, clone));
         }
         return resp;
-      }).catch(() => caches.match('/'));
+      }).catch(() => caches.match('/index.html'));
     })
   );
 });
 self.addEventListener('push', e => {
   const d = e.data ? e.data.json() : {};
   e.waitUntil(self.registration.showNotification(d.title || 'SpeedTrax', {
-    body: d.body || '',
-    icon: '/icons/icon-192.png'
+    body: d.body || '', icon: '/icons/icon-192.png'
   }));
 });
-      `;
-      try {
-        const swBlob = new Blob([swCode], {type: 'application/javascript'});
-        const swUrl = URL.createObjectURL(swBlob);
-        navigator.serviceWorker.register(swUrl)
-          .catch(() => {}); // Silently ignore scope/registration errors in restricted environments
-      } catch(e) { /* ignore */ }
-    }
-  }
-})();
+  `;
+  try {
+    const swBlob = new Blob([swCode], { type: 'application/javascript' });
+    const swUrl = URL.createObjectURL(swBlob);
+    navigator.serviceWorker.register(swUrl).catch(() => {});
+  } catch(e) {}
+}
 </script>
 <link rel="apple-touch-icon" sizes="192x192" href="data:image/png;base64,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">
 <link rel="apple-touch-icon" sizes="512x512" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAakElEQVR42u3dvW4k1RYG0OpWk9qJH4uY1AiJV+Ah5hWQRjgl5rGceFIs+Sb4ygy2u37Ozz5nryXdCLgM7a7zfXtXdfu0sFwuNy9eBYA8np+/nbK/BqleAEEPgGKQoAAIfAAUggQFQOADoBAkKQBCHwBlIFEBEPwAKAJJCoDQB0AZSFQABD8AikCiAiD4AVAEEhUAwQ+AIlDXWfgDQL5sO3lxACDfNiDEBkD4A2AbkGgDIPgBsA1ItgEQ/gDYBvTLwnO2/2AAUAIa3wIQ/ADwsZa3BJptAIQ/AMTJyvNs/0EAoAQEKADCHwDiZed59P8AAFACAhUA4Q8AcbP0PNofGACUgIAFQPgDQPxsPUf/AwIA5TP2HPUPBgDUy9pztD8QAFA/c89R/iAAQLvsPXsZASCfQwXA9A8AY24Bzr3+xQBAvxJwbv0vBAD6lwDPAABAQpsLgOkfAMbfApxr/wsAgHglwC0AAEhodQEw/QPAPFuAc+n/QwAgfglwCwAAErpaAEz/ADDfFsAGAABsAEz/AJBhC2ADAAA2AKZ/AMiwBbABAAAbAAAgbQGw/geAOXyU6TYAAGADYPoHgAxbABsAALABAADSFQDrfwCY0/cZbwMAANk3AACAAgAAzF4A3P8HgLm9zXobAADIvAEAABQAAGD2AuD+PwDk8Jr5NgAAkHUDAAAoAACAAgAAKAAAwPBOPgEAADYAAIACAAAoAACAAgAAjOniJYA5PP/4U7uD468/veAwOJ8CAKGuLIACAAh55QAUAEDYKwWgAADCXikABQAQ9koBKAAg8FEIQAEAoY8yAAoACHwUAlAAQOijDIACAEIfZQAUABD6KAOgAIDgX+GP39v9u37+VREABQCE/jTBrigoAygAIPiFvHKgCKAAgNAX9kqBMoACAIJf2OcuBYoACgAIfoGfuBAoAigAkDH0Bb5CoAygAMD8wX/568/l+fHJDyOoy91tmPcJKAAwevCb8m0HFAEUAEgS/EJfGVAEUAAgSfALfWVAEUABgCTBL/TpUAYUARQA6BX+Ewb/5e623c9rxgchGxcBJQAFAMEv9EOFu5LQtgwoAigACP7kwT9iyE9fDhQBFAAYK/ijf14/U9jPUApafr+AIoACgPCfZNqPGPbPj08P7/w575WCGFsBJQAFAME/YPCPMN2PUgBCFwJFAAUABP9oK/1RC0DIMqAIoABAw/DvHPyj38OfoQCEKwSVi4ASgAKA4Bf6CkDkMqAIoAAg/McP/lmf1p+9AIQoAxWLgBKAAoDgF/oKQPQyoAigACD8tx1sLQ/rbJ/Lz1oAepWBmt8joASgADBF+Av+Y/7+5du6C//Ly38KwMtvp1UF4IevN4pAsCKgBKAAMPTU33LdP2Lwrw332gVg1pLQ9PZApdsCigAKAGOFf6PgHyH0S4Z8zwIwejloVgYqFAElAAWA8OHfat0fNfhbhX20AjBSKWj1/qxxbYECQNqpP1rw9wz86AUgeiFoshGwDUABwNQ/R/BHCvzRCkDUQtDivWsbgALAfJN/5am/d/BHDvzRC0C0QlB9I1B4G6AEoAAw5dTfM/hHCv2ZCkCUMlD7fW0bgAKAqT9Q8I8a+rMWgAhloOpGwDYABYCRwr/m1N8j+GcI/QwFoHcZqPmeL319ggJA+cm/0tTfOvhnC/1sBaBnGai2ESi4DVACOHsJiB7+l7vbpuH/9y/fpg7/jFr/TKu9ZwteX9V/dTc2AOQI/lor/9bBn2XSPfLLgDK9TlG3AW4JoAAw9dQv9PuFltd1jCLglgAKANOE/9rgf358ejjy62sjB9Rsv20vw+u+5f1YvAgoASgAtAz/Giv/NeH//ep6awmIFkAzh32Wn8me92SNa6fktY0CgPAPM/W/d896SwGIEjICf76f1ZH3ZtRtgBKgACD8Q4T/kYO2d5gI/PELwWc/w6PFVAlAASBd+O95yG/LYdszNIT+nGXgvZ9riQJQpQgoASgAlAj/0vf7jzzhf+3A7RUQQj9PGXj9WZcM/xoloNRzAUqAAoDw7x7+nx26y9L+m+yEft4y8N43KZYoAEoACgAhwr/3yn9rCWhRAIS+MvBZATga/rWKQIlbAkqAAoDw7xr+vUqA4FcEWoa/EkALfheA8B8u/Fute3/4evP//zGe1j+/Gu/LotdPgeva7w+wAUD4hwj+jyaxo1sAgW8rsHX6//49V+M9VGwbYBOADYDwHzn8a06MzL8VSL0NsAnABkD4v23zpaaL0uF/7SA9ugUQ+KwN673vtdLvsZLXaomzAxsAkod/jd9/fmSK+uxjWqZ9tr4Xrr2fWm4DSl1rz49PhwPcJsAGAOHfNfi3TGZCnz3vv1LPm0TcBtgEKAAI/yHDf+0BLfjZ+14s/bCpEkAUbgEI/+HDv/WBSw613jc1bgmUKBFuB9gAIPybh3+pA7HlF7SQ5Hqr/IVTJUuGTQA2AKQM/4+CX/gT+T1U8v0fZROADQDBpv8M4f/D15vl+fHpQehTcyNwubu9r/HenWkToEQoAAQJ/2VZDn/5R/Sp331+Wov+Pj5cBA5+Y6ASoAAg/KtP/TBTEVACaMUzAMJf+EOg92Go5wIOnh8+GWADgPAveqgJfjJsA2wCsAFg6PD/+5dvwh/bgM7XTu9NADYAtJr+A4W/4Mc2IM77v+cmwBbABoDK4X/0IhP+EHMbEGETcOR88TyAAkDl8D/S8IU/M0zLSkC96/zoFwUpAQoAtcrDROHv1/XmLAGlnxmJUgJKvZejlADm4BmASab/CPf9S4Y/pv8Z3w+RrhHPA6AACH/hzzChOMP7QwlQAhQAhL/g58D7Z/T3TJTrRgnIyzMAA4vwxL/wp9f7Z/RnBkq870v8t/f8ZAAKgOm/Q3MX/qAElDgPjpxDPhWgAAj/PQ6s/oU/o0//M72PptgEHDiPlAAFQPgLf7AJUAJQAPjwAj1wv034gxJQ85zwPIACQMW22/NLOI4eLr7ch5JBNWOZLHGN9Hwo0vMACgC13uQdV/8lwh9oc70cvV7dClAAiET4Q6r3VdYSgAJg+n97IXa87y/8KW3WX/yjBJQ5t2wBFADh//af7XTfX/iDEtDj3FICFACWpdvqX/gzcygqAW3OEbcCFADT/4Crf4czNVj/j3lduRWgANC6OOxcofW87y/8IWYJ6PU8QM+PLqMADDn991qdCX9MwkpAcTvPM1sABSBd+Pda/VvPErVcEuPn4FaAAkDt4tBh9e+hP8ixBehVAtwKUABM/9fsXJV56I8M07/3WozXYvd541aAAsAHF1WnX6Thvj/kKwG9bsn4hUEKgOn/vX9usNW/8Ie8JaD1rQBbAAVgXh1W/8KfFqz/lYBS5x0KwJTTf5bDBnBdOl8VAG/OQad/EG5zGWkLoAQoANPY+0CM1T+zBwttr88eJcADgQpA6um/9WdjhT8oAVEKmwcCFQDTf8PpX/iTKdC8Zg3PM1sABcD0P+f0D95vfm62AAoAJTR+8M/qH2wBap8XPhaoAJj+K7H6R4gR/fVreU7ZAigAaab/dy+Ax6eHWm3e4UvrCZI4JWDNz3DN+WMLoACY/iu26ufHp4ePLkQHMVC6yH125tgCKAB0mP5LtnHTP72nf+/B/luA1ueOLYACYPo/0KbfNnOrf+Dodf16jlyb+m0BFAA6Tf/v/fXTl5cHLzpwxOnLy8Oa88YWQAGg0fR/ubu9v9zd3q+5eE3/tGL9P9cWYM358dlZ1OOTS2z4+V4uNy9eho3T9551U8XP/a9t3y+/ne4duigAXPs5rR0c1gwhu7/w7Odft5+XvlVw2+vlJRhv+v/oIrxWBF4v6mtFAEaaUik4ERYM/rfnWOtvPcUGIMX0/16zX3sRvy0CDl1M/3l/XlvOjD0/H1uAmDwDMPj0/9FFumbKf73oHbiQz+t1vyb8154pNc4zbABM/zsnsBorPai1AVBGG55nB54dsgWYZND0Esw1/X908X5WBIQ/EcKf5ufM/WcloPSzQp4FiMctgJoXWMMWeu0APrrCA3JYc1a0LHymeQWguz3r/z1tt/a9su8vbNM/UaZ/6/8+W4CaU3+J823POeqbAVf+PLwE+Q7gNbcFgFxT/55zR2mzATD9v2fHw38tn5T94euN6R9YLne39y2DfNc5t+M8tQVQAEz/H4Q/9Hr/eU/GtOdn4OFPBYDBpn+AnlptAVAADom8RjL9k3XyxBZg9PNbAQCGZf0LCoDp/61G63/TPzDyFsDDgAoAIGwABWBwpn+SsP5XzEbaAqAAbGJtBOA8VwCowkf/MGXiHHQOKgCja7SWsv6nN+t/Ba37e8NtAAWgFusiAOe6AkAVHv4j8/TvfWkLcPQ8RAGIwToKwLmrAIwt6prI9A/MvAXIfL4rAIlYdzEi63+ciwoAb1lDATh/FQCiTF6mLCLyvszzc/NxUQVgKC3uD1lzkaWEQsTz0XMACkCZN+tff5qyAFsA57ACkG5j8Phk8gLFlI7nV4tzWAGYPcyt/0EJpf9E7zaAAoApC3C+oADE0+DjJyYvBAeja3KO+TigAgAooYACsNos9/9NWcAM54znABQAkxdM8B5UTHGeKQDzcL8JwLmsAHCN9T8wk1luAygAAN+x/gcFYHoRHwRxvwxQKnOe/wpAZAHvM5myiMj70s/X+awApOY+FiY1cH4qAACAAoDpizlZ/+N8UwBCm+EBEActDmicP7lzQAFowQMmAM5pBYBrPMBCxunfVgrnqAJApwMYwDmHAjAxkxbgHEIB2MivgoTyU5kwQB4oAPPxYAmA81oB4BoPrpCN6R/nqQLADh6MwXsP7zkUAExbgPMIBQAQAIACABRiFQsKQCo+AghA9lywAVjDR0rgQ9b/OLcVAP7hIyuMwPof56oCwGAHsYkLiGbruaSAKgDAwNO/MgrjungJII/nx6dlWZbl9Mnf8/LbyQsFCgAwS+ivdfryogyAAgBkCf7PysB7RcD6H8bmGQAQ/pu2AoANADB58H+0DTD9gw0AkCD8bQNAARj/kNz6dY8bv03Kl1Uwc/j3+vfBrvN14/md7euAbQA68yVAjBrGSgBHzydfBqQAAAAKADDKFG4LAOPyKQBIGP7v3Uvd+//3/Pjk2RdQAIDQF/wnQf3610z1kINbAJBg+r/c3a6e0rf8vXv/PIACAHSc+mv8c4ACAAAoAEAJW9btR6f4Lf+82wCgAAAAwfkUQP1p7eGzv775t61/WZbL3e29V5ba0//b/x/TPWvPuz1n2pX3n/POBgAAUAAAAAUAAFAAAIBPeAiw9gt85QEWvw6YWkp9R78HANly3jnTbAAAAAUAKDhlNZveW37pEKAAAAAKANBqii/xzwEKAFDJnl/XuzbQt/y9e/88QIBzxEsA+bYB7wW2iR8UAGCQLUCE9b7pH8bkFgAMXgIy//sBBQAAUADGsfVbsLZ+yxa2AKZ/WvEtgApA7MPyrz+3/QM//7rpb/cgFRnCWPjTw+bzdeP5vTkfFAAgUwkQ/jDJmeElgPlKQI1NlOAHGwAg2TZA+IMNAJBoGyD4QQEAJtgGrCkDQh8UAGDiMgDk5hkAAFAA6MGXAQGj8yVACgCLLwMCcK4qAHPY+G1SADi3FYCAsn3dIwByQQEAABQAAFAAGIZPAgDOIxSACfhIDOC8QwGYgI+sADhPFYAZ+EgJgPNaARifjwICkDkPbAAG5sEbwDmEAjABD8YAzjkUgAl4cAXAOaoAzMCDJQDOaQVgfDM8+OH+G+D8yZ0DCsAk3B8DnG8oAACAAjAiD7AAOD8VgBkEfMDEcwCAc2fxAKACsE3EB0DcJwNmE/Fcy/6NsDYAAKAAUEOL+1huAwCttDhv3P9XAGJynwnAuawAUIPnAADnGQpAZS0eBHEbAJjBLOt/vxJeAQAABYANGtxvsjYDRtfkHHP/XwHAbQDA+YICsMkszwEAjMz9fwVgjNJwd1v93+E2ADCqFudXi3NYAeC/TfXHn0L+uazpgCznStRzWAEYbaJ3GwCgX5hb/ysA/NueNZotANBz+nf7UgGYn4+fADh/FQDWcBsAwLmoAAQT9f6Q2wBADzOt/93/VwDKs4YCcO4qAKyxZ91lCwDMOP1b/ysAYVgTATjXFQDWabSOsgUAZpr+I5+3CgDVWHsBzkHnoAIQjHURgPNcAWCdHWspDwMC0YR++M/6XwEAABSAKnatjWwBANN/mOnf+l8BAAAUgDnaoy0AMOL07/xWAObV6DYAwIg8/KcA0HkL8Pz49OAVBGac/lEAioj8MOAepy8vD8IfeB0EWt4a9PCfAkCnLcDpy8vD9xe/VxByO315efj+bDD9KwAcaJOXu9swW4A9Fzgw//T/2YAQYfrfc46a/hWA/hfXjz913wKsCX5bAGDLmdFy+m95jqYbbL0EIVv5rtb73oW8ol3fe8XB9P/R+fHy2+m+0L/Pix6t7F0uNy9ehspt9I/ftzeznQXg71++rV7jCX9gzQbwbQnYO/17+M8GgIpbgOfHp4eT4Ae2DRv3tbcBpn8bAFuASluAtffwBT/Q4ywx/dsAUGELsOaCFfzAlmC/dq68/vU1Z4vp3wbAFqDwFsDUD0TYCFw7Y0z/cfkY4ABbgD0X3eXu9l74AyU2AtdKwkdFwfSvAHCg1e65YAU/0PJMKXrm+KU/CkD4i6LhumntFkDwA1GGi5bTv/W/ApB2C2DqB1oWAdO/AuBCCLgFAOi9DTD9KwBouUCibYBzUQGwBWi8BQCIwvSvAFCp7SoBwHThb/pXALJtAUr8xj+Aoc/Pneeg6V8BGLst7/w917YAwCzT/95zEAXAFgDA9I8CYAsAYPpHARhkC+CBQCBb+O8990z/CsB8JQAA56sCkJAtAGD6RwHI2VL3PhCjBACjhL8H/xQA3rugPBADOOdQAHJuAdwKAGad/j34pwBw7c3uVgAwWfj7zhMFwBZgzQV2YEWmBADhJv8D55rpXwFIVwI8JQtMw+pfAWDjm9+tAGDw6d/qXwGwBdhzwbkVAAwc/kfOMdO/AsCBWwFKANAz/N3KVAA42Gat0IDhzrwD55bpXwFQAl4buFsBwGDTv9W/AkApbgUAg4S/1b8CQOl2qwQAE4e/6V8BUAI++2c9DwBEPdvc91cAqNjMPQ8ABJ3+/aIfBYDabdetACBY+Fv9KwAoAYDwF/4KADXf/EfutykBQInzwH1/BYAeF+3B+21KAHD0HHDfXwGg0xbg6OdtlQAQ/j3OH9O/AoASAAh/FAAloFcJABD+CgCjFggPBQKVr3dfRqYAEHAL8PzjT0oAUDX8jzz0Z/pXAKhcAnodDsC84X/0fBH+CgAtLhYPBQKlr2v3/RUABqEEAAHCHwWAHq1ZCQDh3zn8Tf8KAEoAIPxRAFACAOGPAkD1i+noZ3efH58UARgk+I9eq0fPC+GvABCoBBz9jgDbAEgw9S8+668AMOfhoASA8K8Y/igABN0CKAEg/GuGv+lfAUAJAIQ/CgBKACD8UQBQAgDhT3eny+Xmxcsw+EFQ4AIuFeJ+VSjED37hjwKgBPzbH78rAZAg/Et8t7/wH59bAJMocjEW+oUfbgmA8McGgMSbANsACFaohT82ADYBLTYBtgEg/FEAUAIA4U8gbgHMfIAUuB1Q8hMCy+KWALQM/lJf7Sv8bQBIuAko9V0BtgEg/LEBYMBNwLIsHg6EQcK/1C084a8AoARUKQGKAFTYigl/VnILIIliF3PBhwOrHH4g/IU/NgDU2wSUfjjQNgDBf+zaKXltowCgBFznlgBMMfULfwUAJaB7CVAEEPzCHwWAQUpAjVsCigCC/+ProvT1iwKAImAbAKZ+FACUgBglQBEgffALfxQARigBtW4JKAJkDH4rfxQAxtoEVNwGKAKkmPgLT/3CHwWApiWg5jZAEWDW4C899Qt/FACm3AYoAkwz8Zv6UQCwDVAEyBX8pn4UAObeBDTYBigCDDXxV5j6hT8KAKm3AYoA0YPf1I8CgG2AIkCmid/UjwKAEtC2CCgDdA39SsEv/FEAGLoItLotoAjQI/hrrPsFPwoAU20DFAEEv/BHASBpCViWpeltAWVA6FdRad0v/FEAUASUAaKFvuBHAUAJmKMIKANCP0LwC38UABSBjkVAGRD6gh8FAHqWgABFQCFIHPiNgl/4owCgCAxQBJSBJKEv+FEAQBFQCJIEvuBHAYDgJWBp/z0CSsGkYf/m59XyvQsKAIrApFuB7KUgcti3nvYFPwoAioAiMFU5GCbkBT8KACQpAoOXgQglYehwDxD6gh8FAHqWgEmLALGDX/ijAECkIqAMCH3BjwIAyYuAMiD0BT8KACQvAsqA0Bf8KACQvAgs8b9fILuWn9cX/CgAkLAI2A6Y8gU/CgAoAwpB0sAX+igAoAgoBEkCX/AzTQFYlmVRAlAElAJhL/hJdFY+fzspACgDSoGwF/ooAKAIKAc5Q17wowCAMqAoTB7sQh8FQAFAEQDBjwIAygBCHxIVACUAlAGhD3nCf1n++RigAgDKgNAHBQBQCAQ+KACAMiD0YdoCoASAQiDwIUf4KwCgFAh7UAAUAFAKhD0oAIBSIOwhRwFQAkA5EPIwf/grAKAsCHVQABQAAMhSAM7X/gYAYK7wf7cAAADzO69tCgDAHNO/DQAA2AAAAOkLgNsAADC2z7LcBgAAbABsAQBg9unfBgAAbABsAQAgw/RvAwAANgC2AACQYfrftAFQAgBgjvDfVAAAgHlsKgC2AAAw/vS/awOgBADA2OG/qwAAAOPbVQBsAQBg3On/0AZACQCAMcP/UAFQAgBgzPA/XAAAgDEdLgC2AAAw1vRfbAOgBADAOOFfrAAoAQAwTvgXLQBKAACMEf7FC4ASAADxw79KAVACACB+pp5H+wMDgPAPXACUAACIm6Hn0f8DAED4BywASgAAxMvM82z/QQAg/K/rEsqXy82LHzMA9BuSz1n+QwFA+HcuAEoAAPTNwhAh7JYAAII/yQbANgAA4d9PuOC1DQBA8CfZANgGACD8k28AbAMAEPzJC4AiAIDgT1wAFAEABH/iAqAMACD0kxcARQAAwZ+4ACgDAAj95AVAIQBA4CsACgEAAl8BUAwAyBf0H/kfQeN0yd2espgAAAAASUVORK5CYII=">
