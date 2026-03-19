@@ -32,16 +32,16 @@
       "purpose": "any"
     },
     {
-      "src": "icons/icon-192.png",
-      "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "maskable"
-    },
-    {
       "src": "icons/icon-512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
+    },
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
     },
     {
       "src": "icons/icon-512.png",
@@ -71,27 +71,13 @@
       "name": "Speed Tracker",
       "short_name": "Speed",
       "description": "Open the speed tracking screen",
-      "url": "/?screen=speed",
-      "icons": [
-        {
-          "src": "icons/icon-192.png",
-          "sizes": "192x192",
-          "type": "image/png"
-        }
-      ]
+      "url": "/speedtrax/?screen=speed"
     },
     {
       "name": "Trip Log",
       "short_name": "Trips",
       "description": "View your trip history",
-      "url": "/?screen=trips",
-      "icons": [
-        {
-          "src": "icons/icon-192.png",
-          "sizes": "192x192",
-          "type": "image/png"
-        }
-      ]
+      "url": "/speedtrax/?screen=trips"
     }
   ],
   "share_target": {
@@ -133,32 +119,6 @@
   ],
   "edge_side_panel": {
     "preferred_width": 400
-  },
-  "widgets": [
-    {
-      "name": "SpeedTrax Widget",
-      "description": "Quick speed and trip stats",
-      "tag": "speedtrax-widget",
-      "ms_ac_template": "/widget-template.json",
-      "data": "/widget-data.json",
-      "type": "application/json",
-      "screenshots": [
-        {
-          "src": "/screenshots/narrow.png",
-          "sizes": "390x844",
-          "label": "SpeedTrax Widget"
-        }
-      ],
-      "icons": [
-        {
-          "src": "/icons/icon-192.png",
-          "sizes": "192x192"
-        }
-      ]
-    }
-  ],
-  "note_taking": {
-    "new_note_url": "/"
   },
   "related_applications": [
     {
