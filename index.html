@@ -4705,48 +4705,7 @@ setTimeout(()=>setTripMode('commute'),100);
   }
 })();
 
-// ── GPS DEBUG OVERLAY ── shows raw GPS data on screen
-(function(){
-  const dbg=document.createElement('div');
-  dbg.id='gps-dbg';
-  dbg.style.cssText='position:fixed;bottom:90px;left:0;right:0;z-index:9999;background:rgba(0,0,0,.85);color:#0f0;font-family:monospace;font-size:11px;padding:8px 12px;pointer-events:none;border-top:1px solid #0f0;';
-  dbg.textContent='GPS: waiting...';
-  document.body.appendChild(dbg);
-
-  let watchId=null;
-  function startDbgWatch(){
-    if(watchId)return;
-    watchId=navigator.geolocation.watchPosition(
-      pos=>{
-        const spd=pos.coords.speed;
-        const acc=pos.coords.accuracy;
-        const lat=pos.coords.latitude.toFixed(5);
-        const lon=pos.coords.longitude.toFixed(5);
-        const ts=new Date(pos.timestamp).toLocaleTimeString();
-        dbg.style.color='#0f0';
-        dbg.innerHTML=
-          `✅ GPS LIVE [${ts}]<br>`+
-          `coords.speed: ${spd!=null?spd.toFixed(2)+' m/s ('+( spd*3.6).toFixed(1)+' km/h)':'NULL ⚠️'}<br>`+
-          `accuracy: ±${Math.round(acc)}m | lat:${lat} lon:${lon}`;
-      },
-      err=>{
-        dbg.style.color='#f00';
-        dbg.textContent='❌ GPS ERROR: code='+err.code+' '+err.message;
-      },
-      {enableHighAccuracy:true,maximumAge:0,timeout:15000}
-    );
-  }
-
-  if(navigator.geolocation){
-    navigator.geolocation.getCurrentPosition(
-      ()=>{ dbg.textContent='✅ GPS permission OK — starting watch...'; startDbgWatch(); },
-      err=>{ dbg.style.color='#f00'; dbg.textContent='❌ GPS DENIED: code='+err.code; }
-    );
-  } else {
-    dbg.style.color='#f00';
-    dbg.textContent='❌ navigator.geolocation NOT AVAILABLE';
-  }
-})();
+// GPS debug overlay removed
 
 
 // Only ask if not already granted — browser will use cached permission silently
