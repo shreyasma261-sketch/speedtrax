@@ -60,15 +60,15 @@ input,select,button,textarea{font-family:var(--exo);}
 .scan{position:fixed;width:100%;height:2px;background:linear-gradient(transparent,rgba(0,240,255,.04),transparent);animation:scanline 8s linear infinite;pointer-events:none;z-index:1;}
 
 /* ── ONBOARDING ── */
-#onboard{position:fixed;inset:0;z-index:500;background:var(--bg);display:flex;flex-direction:column;overflow-y:auto;padding-bottom:24px;}
+#onboard{position:fixed;inset:0;z-index:500;background:var(--bg);display:flex;flex-direction:column;overflow-y:auto;padding-bottom:16px;}
 #onboard.gone{display:none;}
-.ob-logo-wrap{text-align:center;padding:44px 24px 24px;}
-.ob-logo{font-family:var(--orb);font-size:30px;font-weight:900;letter-spacing:5px;color:var(--cyan);text-shadow:0 0 24px rgba(0,240,255,.5);}
+.ob-logo-wrap{text-align:center;padding:24px 24px 16px;}
+.ob-logo{font-family:var(--orb);font-size:26px;font-weight:900;letter-spacing:4px;color:var(--cyan);text-shadow:0 0 24px rgba(0,240,255,.5);}
 .ob-logo b{color:var(--orange);text-shadow:0 0 24px rgba(255,102,0,.5);}
 .ob-tagline{font-size:12px;color:var(--text3);letter-spacing:3px;margin-top:6px;}
-.ob-step-head{font-family:var(--orb);font-size:13px;font-weight:700;letter-spacing:1.5px;color:var(--text);text-align:center;padding:0 20px 6px;}
-.ob-step-sub{font-size:12px;color:var(--text2);text-align:center;padding:0 20px 16px;line-height:1.6;}
-.ob-cats{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;padding:0 14px 16px;}
+.ob-step-head{font-family:var(--orb);font-size:13px;font-weight:700;letter-spacing:1.5px;color:var(--text);text-align:center;padding:0 20px 4px;}
+.ob-step-sub{font-size:12px;color:var(--text2);text-align:center;padding:0 20px 10px;line-height:1.5;}
+.ob-cats{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;padding:0 14px 16px;min-height:160px;}
 .ob-cat{background:var(--card);border:1.5px solid var(--bdr);border-radius:14px;padding:15px 8px;text-align:center;cursor:pointer;transition:all .2s;position:relative;}
 .ob-cat:hover{border-color:var(--bdr2);}
 .ob-cat.sel{border-color:var(--cyan);background:rgba(0,240,255,.06);box-shadow:0 0 16px rgba(0,240,255,.15);}
@@ -4704,8 +4704,6 @@ setTimeout(()=>setTripMode('commute'),100);
     }
     toast('Session restored ✓');
   }
-})();
-
 })();
 
 
