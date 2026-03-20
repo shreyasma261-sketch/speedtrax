@@ -1,0 +1,78 @@
+{
+  "name": "SpeedTrax \u2014 India's Vehicle Companion",
+  "short_name": "SpeedTrax",
+  "description": "Track speed, trips, fuel & expenses for Indian vehicles",
+  "id": "/speedtrax/",
+  "start_url": "/speedtrax/",
+  "scope": "/speedtrax/",
+  "display": "standalone",
+  "display_override": [
+    "window-controls-overlay",
+    "standalone",
+    "minimal-ui"
+  ],
+  "orientation": "portrait",
+  "background_color": "#04040e",
+  "theme_color": "#04040e",
+  "lang": "en-IN",
+  "dir": "ltr",
+  "categories": [
+    "navigation",
+    "utilities",
+    "travel"
+  ],
+  "prefer_related_applications": false,
+  "icons": [
+    {
+      "src": "https://shreyasma261-sketch.github.io/speedtrax/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "https://shreyasma261-sketch.github.io/speedtrax/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "https://shreyasma261-sketch.github.io/speedtrax/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "https://shreyasma261-sketch.github.io/speedtrax/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "https://shreyasma261-sketch.github.io/speedtrax/screenshot.png",
+      "sizes": "390x844",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "SpeedTrax Speed Tracker"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Speed Tracker",
+      "short_name": "Speed",
+      "description": "Open speed tracking screen",
+      "url": "/speedtrax/?screen=speed"
+    },
+    {
+      "name": "Trip Log",
+      "short_name": "Trips",
+      "description": "View trip history",
+      "url": "/speedtrax/?screen=trips"
+    }
+  ],
+  "launch_handler": {
+    "client_mode": "focus-existing"
+  },
+  "related_applications": []
+}
