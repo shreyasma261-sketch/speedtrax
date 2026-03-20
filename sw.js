@@ -1,4 +1,4 @@
-const CACHE = 'speedtrax-v2';
+const CACHE = 'speedtrax-v3';
 const BASE = 'https://shreyasma261-sketch.github.io/speedtrax';
 const ASSETS = [
   BASE + '/',
@@ -6,9 +6,11 @@ const ASSETS = [
   BASE + '/manifest.json',
   BASE + '/icon-192.png',
   BASE + '/icon-512.png',
-  BASE + '/screenshot.png'
+  BASE + '/screenshot.png',
+  BASE + '/screenshot-wide.png'
 ];
 
+// ── Install: pre-cache all assets ────────────────────────────────────────────
 self.addEventListener('install', e => {
   e.waitUntil(
     caches.open(CACHE)
@@ -17,6 +19,7 @@ self.addEventListener('install', e => {
   );
 });
 
+// ── Activate: clean old caches ────────────────────────────────────────────────
 self.addEventListener('activate', e => {
   e.waitUntil(
     caches.keys()
@@ -25,6 +28,7 @@ self.addEventListener('activate', e => {
   );
 });
 
+// ── Fetch: cache-first with network fallback ──────────────────────────────────
 self.addEventListener('fetch', e => {
   if (e.request.method !== 'GET') return;
   e.respondWith(
@@ -42,10 +46,52 @@ self.addEventListener('fetch', e => {
   );
 });
 
+// ── Push notifications ────────────────────────────────────────────────────────
 self.addEventListener('push', e => {
   const d = e.data ? e.data.json() : {};
   e.waitUntil(self.registration.showNotification(d.title || 'SpeedTrax', {
-    body: d.body || '',
-    icon: BASE + '/icon-192.png'
+    body: d.body || 'New update available',
+    icon: BASE + '/icon-192.png',
+    badge: BASE + '/icon-192.png',
+    tag: 'speedtrax-notification',
+    renotify: true,
+    data: {url: d.url || BASE + '/'}
   }));
+});
+
+// ── Notification click ────────────────────────────────────────────────────────
+self.addEventListener('notificationclick', e => {
+  e.notification.close();
+  e.waitUntil(clients.openWindow(e.notification.data?.url || BASE + '/'));
+});
+
+// ── Background Sync ───────────────────────────────────────────────────────────
+self.addEventListener('sync', e => {
+  if (e.tag === 'sync-trips') {
+    e.waitUntil(syncTripData());
+  }
+});
+
+async function syncTripData() {
+  try {
+    const cache = await caches.open(CACHE);
+    await cache.add(new Request(BASE + '/', {cache: 'reload'}));
+    const clients_ = await self.clients.matchAll();
+    clients_.forEach(c => c.postMessage({type: 'SYNC_READY'}));
+  } catch(e) {}
+}
+
+// ── Periodic Background Sync ──────────────────────────────────────────────────
+self.addEventListener('periodicsync', e => {
+  if (e.tag === 'update-speedtrax') {
+    e.waitUntil(syncTripData());
+  }
+});
+
+// ── Share target handler ──────────────────────────────────────────────────────
+self.addEventListener('fetch', e => {
+  const url = new URL(e.request.url);
+  if (url.searchParams.has('share') && e.request.method === 'GET') {
+    e.respondWith(Response.redirect(BASE + '/'));
+  }
 });
