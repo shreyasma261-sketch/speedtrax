@@ -24,7 +24,12 @@
   ],
   "iarc_rating_id": "e84b072d-71b3-4d3e-86ae-31a8ce4e53b7",
   "prefer_related_applications": false,
-  "related_applications": [],
+  "related_applications": [
+    {
+      "platform": "webapp",
+      "url": "https://shreyasma261-sketch.github.io/speedtrax/manifest.json"
+    }
+  ],
   "icons": [
     {
       "src": "https://shreyasma261-sketch.github.io/speedtrax/icon-192.png",
@@ -112,6 +117,9 @@
   "scope_extensions": [
     {
       "origin": "https://shreyasma261-sketch.github.io"
+    },
+    {
+      "origin": "https://*.shreyasma261-sketch.github.io"
     }
   ],
   "share_target": {
