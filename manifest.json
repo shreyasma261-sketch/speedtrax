@@ -1,0 +1,186 @@
+{
+  "name": "SpeedTrax — India's Vehicle Companion",
+  "short_name": "SpeedTrax",
+  "description": "Track speed, trips, fuel & expenses for Indian vehicles",
+  "id": "/speedtrax/",
+  "start_url": "/speedtrax/",
+  "scope": "/speedtrax/",
+  "display": "standalone",
+  "display_override": [
+    "tabbed",
+    "window-controls-overlay",
+    "standalone",
+    "minimal-ui"
+  ],
+  "orientation": "any",
+  "background_color": "#04040e",
+  "theme_color": "#04040e",
+  "lang": "en-IN",
+  "dir": "ltr",
+  "categories": [
+    "navigation",
+    "utilities",
+    "travel"
+  ],
+  "iarc_rating_id": "e84b072d-71b3-4d3e-86ae-31a8ce4e53b7",
+  "prefer_related_applications": false,
+  "related_applications": [
+    {
+      "platform": "webapp",
+      "url": "https://shreyasma261-sketch.github.io/speedtrax/manifest.json"
+    }
+  ],
+  "icons": [
+    {
+      "src": "https://shreyasma261-sketch.github.io/speedtrax/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "https://shreyasma261-sketch.github.io/speedtrax/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "https://shreyasma261-sketch.github.io/speedtrax/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "https://shreyasma261-sketch.github.io/speedtrax/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "https://shreyasma261-sketch.github.io/speedtrax/screenshot.png",
+      "sizes": "390x844",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "SpeedTrax Speed Tracker on mobile"
+    },
+    {
+      "src": "https://shreyasma261-sketch.github.io/speedtrax/screenshot-wide.png",
+      "sizes": "1280x800",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "SpeedTrax Dashboard on desktop"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Speed Tracker",
+      "short_name": "Speed",
+      "description": "Open speed tracking screen",
+      "url": "/speedtrax/?screen=speed",
+      "icons": [
+        {
+          "src": "https://shreyasma261-sketch.github.io/speedtrax/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Trip Log",
+      "short_name": "Trips",
+      "description": "View trip history",
+      "url": "/speedtrax/?screen=trips",
+      "icons": [
+        {
+          "src": "https://shreyasma261-sketch.github.io/speedtrax/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Fuel Log",
+      "short_name": "Fuel",
+      "description": "Log a fuel fill-up",
+      "url": "/speedtrax/?screen=fuel",
+      "icons": [
+        {
+          "src": "https://shreyasma261-sketch.github.io/speedtrax/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ],
+  "launch_handler": {
+    "client_mode": "focus-existing"
+  },
+  "handle_links": "preferred",
+  "scope_extensions": [
+    {
+      "origin": "https://shreyasma261-sketch.github.io"
+    },
+    {
+      "origin": "https://*.shreyasma261-sketch.github.io"
+    }
+  ],
+  "share_target": {
+    "action": "/speedtrax/?share",
+    "method": "GET",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url"
+    }
+  },
+  "protocol_handlers": [
+    {
+      "protocol": "web+speedtrax",
+      "url": "/speedtrax/?protocol=%s"
+    }
+  ],
+  "edge_side_panel": {
+    "preferred_width": 400
+  },
+  "widgets": [
+    {
+      "name": "SpeedTrax Speed",
+      "short_name": "Speed",
+      "description": "Live speed display widget",
+      "tag": "speed-widget",
+      "ms_ac_template": "widgets/speed.json",
+      "data": "widgets/speed-data.json",
+      "type": "application/json",
+      "screenshots": [
+        {
+          "src": "https://shreyasma261-sketch.github.io/speedtrax/icon-192.png",
+          "sizes": "192x192",
+          "label": "Speed widget"
+        }
+      ],
+      "icons": [
+        {
+          "src": "https://shreyasma261-sketch.github.io/speedtrax/icon-192.png",
+          "sizes": "192x192"
+        }
+      ],
+      "auth": false,
+      "update": 86400
+    }
+  ],
+  "note_taking": {
+    "new_note_url": "/speedtrax/?screen=fuel"
+  },
+  "file_handlers": [
+    {
+      "action": "/speedtrax/?open",
+      "accept": {
+        "text/csv": [
+          ".csv"
+        ],
+        "application/json": [
+          ".json"
+        ]
+      }
+    }
+  ],
+  "privacy_policy_url": "https://shreyasma261-sketch.github.io/speedtrax/privacy.html"
+}
